@@ -11,6 +11,15 @@ export function convertISOToDate(isoDate: string): string {
     });
 }
 
+export function convertISOToDateToNormal(isoDate: string): string {
+    const date = new Date(isoDate);
+    return date.toLocaleDateString('id-ID', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    });
+}
+
 export function finalPriceProduct (price : number, qty : number): number {
     return price * qty
 }
