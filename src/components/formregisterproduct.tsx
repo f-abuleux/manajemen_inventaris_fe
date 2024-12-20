@@ -6,11 +6,6 @@ import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik"
 import { Mail } from "lucide-react"
 import React from "react"
 
-// Extend ImportMeta interface to include env property
-
-
-
-
 const FormRegisterProduct: React.FC = () => {
 
     const createProduct = async (data: ICreateDataProduct, action: FormikHelpers<ICreateDataProduct>) => {
