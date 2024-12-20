@@ -3,6 +3,8 @@ import './App.css'
 import FormRegisterProduct from './components/formregisterproduct'
 import ListProduct from './components/listproduct'
 
+console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+
 const App: React.FC = () => {
 
   return (
