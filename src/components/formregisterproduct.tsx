@@ -5,6 +5,11 @@ import { ICreateDataProduct } from "@/types/types"
 import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik"
 import { Mail } from "lucide-react"
 import React from "react"
+import { MdDriveFileRenameOutline , MdOutlineProductionQuantityLimits, MdOutlineDateRange} from "react-icons/md";
+import { BiCategory } from "react-icons/bi";
+import { IoPricetagOutline } from "react-icons/io5";
+
+
 
 const FormRegisterProduct: React.FC = () => {
 
@@ -43,14 +48,14 @@ const FormRegisterProduct: React.FC = () => {
                         <Form className='space-y-6'>
                             <div className='space-y-2'>
                                 <div className='relative'>
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                                    <Field name="product_name" type="text" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-black transition-all duration-300" placeholeder="Piring" />
+                                    <MdDriveFileRenameOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                                    <Field   name="product_name" type="text" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-black transition-all duration-300" placeholeder="Piring" />
                                     <ErrorMessage name="product_name" component={'div'} className="absolute text-[12px]" />
                                 </div>
                             </div>
                             <div className='space-y-2'>
                                 <div className='relative'>
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                                    <BiCategory className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                                     <Field as="select" name="product_category" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black transition-all duration-300">
                                         <option value="" label="Select category" />
                                         <option value="Elektronik" label="Elektronik" />
@@ -63,21 +68,21 @@ const FormRegisterProduct: React.FC = () => {
                             </div>
                             <div className='space-y-2'>
                                 <div className='relative'>
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                                    <Field name="product_quantity" type="number" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-black transition-all duration-300" placeholeder="Piring" min={0} />
+                                    <MdOutlineProductionQuantityLimits className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                                    <Field name="product_quantity" type="number" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-black transition-all duration-300" placeholeder="0" min={0} />
                                     <ErrorMessage name="product_quantity" component={'div'} className="absolute text-[12px]" />
                                 </div>
                             </div>
                             <div className='space-y-2'>
                                 <div className='relative'>
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                                    <Field name="product_price" type="number" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-black transition-all duration-300" placeholeder="Piring" min={0} />
+                                    <IoPricetagOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                                    <Field name="product_price" type="number" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-black transition-all duration-300" placeholeder="1" min={0} />
                                     <ErrorMessage name="product_price" component={'div'} className="absolute text-[12px]" />
                                 </div>
                             </div>
                             <div className='space-y-2'>
                                 <div className='relative'>
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                                    <MdOutlineDateRange className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                                     <Field name="input_date" type="date" className="w-full pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black transition-all duration-300" max={new Date().toISOString().split("T")[0]} />
                                     <ErrorMessage name="input_date" component={'div'} className="absolute text-[12px]" />
                                 </div>

@@ -37,7 +37,6 @@ const ListProduct: React.FC = () => {
         fetchProduct()
     }, [])
 
-
     return (
         <div className="sm:w-2/3 bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-8">
             <div className="space-x-6 mb-6">

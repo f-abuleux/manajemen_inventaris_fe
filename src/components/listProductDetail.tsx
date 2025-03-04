@@ -59,7 +59,7 @@ export default function ListProductDetail({ product_name, product_quantity, prod
             <button onClick={handleModal} className="hover:bg-black hover:text-white duration-300 p-1 rounded-sm text-[10px]">UPDATE</button>
             {
                 modal && (
-                    <div className="absolute right-10 h-16 border-[1px] rounded-md">
+                    <div className="absolute right-1 top-1 h-16 border-[1px] rounded-md ">
                         <Formik
                             initialValues={initialUpdateValues}
                             validationSchema={registerSchema}
@@ -68,15 +68,15 @@ export default function ListProductDetail({ product_name, product_quantity, prod
                             }}
                         >
                             {({ isSubmitting }) => (
-                                <Form className="flex flex-col gap-2 p-2 backdrop-blur-sm">
-                                    <div>
+                                <Form className="flex flex-col gap-2 p-2 w-[200px] bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl">
+                                    <div className="w-full">
                                         <p className="font-bold">Product Name</p>
-                                        <Field name="product_name" type="text" />
+                                        <Field name="product_name" type="text" className="p-1 rounded-lg" />
                                         <ErrorMessage name="product_name" component={'div'} className="absolute text-[12px]" />
                                     </div>
-                                    <div>
+                                    <div className="w-full">
                                         <p className="font-bold">Product Category</p>
-                                        <Field as="select" name="product_category" >
+                                        <Field as="select" name="product_category" className="p-1 rounded-lg" >
                                             <option value="" label="Select category" />
                                             <option value="Elektronik" label="Elektronik" />
                                             <option value="Pakaian" label="Pakaian" />
@@ -85,24 +85,23 @@ export default function ListProductDetail({ product_name, product_quantity, prod
                                         </Field>
                                         <ErrorMessage name="product_category" component={'div'} className="absolute text-[12px]" />
                                     </div>
-                                    <div>
+                                    <div className="w-full">
                                         <p className="font-bold">Product Quantity</p>
-                                        <Field name="product_quantity" type="number" min={0} />
+                                        <Field name="product_quantity" type="number" min={0} className="p-1 rounded-lg"/>
                                         <ErrorMessage name="product_quantity" component={'div'} className="absolute text-[12px]" />
                                     </div>
-                                    <div>
+                                    <div className="w-full">
                                         <p className="font-bold">Product Price</p>
-                                        <Field Field name="product_price" type="number" min={0} />
+                                        <Field Field name="product_price" type="number" min={0} className="p-1 rounded-lg"/>
                                         <ErrorMessage name="product_price" component={'div'} className="absolute text-[12px]" />
                                     </div>
-                                    <div>
+                                    <div className="w-full">
                                         <p className="font-bold">Input Date</p>
-                                        <Field name="input_date" type="date" max={new Date().toISOString().split("T")[0]} />
+                                        <Field name="input_date" type="date" max={new Date().toISOString().split("T")[0]} className="p-1 rounded-lg"/>
                                         <ErrorMessage name="input_date" component={'div'} className="absolute text-[12px]" />
                                     </div>
                                     <button type="submit" className="w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-all duration-300">Input Product</button>
                                     <button onClick={handleModal}>Cancel</button>
-
                                 </Form>
                             )}
 
